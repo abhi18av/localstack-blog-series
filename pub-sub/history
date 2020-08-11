@@ -1,0 +1,100 @@
+  572  awslocal iam list-roles
+  573  awslocal iam list-roles
+  574  lambda create-function --function-name CreateThumbnail --zip-file fileb://function.zip --handler index.handler --runtime nodejs12.x --timeout 10 --memory-size 1024 \
+  575  awsloca lambda create-function --function-name CreateThumbnail --zip-file fileb://function.zip --handler index.handler --runtime nodejs12.x --timeout 10 --memory-size 1024 \
+  576  awslocal lambda create-function --function-name CreateThumbnail --zip-file fileb://function.zip --handler index.handler --runtime nodejs12.x --timeout 10 --memory-size 1024 --role arn:aws:iam::000000000000:role/lambda-s3-role
+  577  vim inputFile.txt
+  578  awslocal s3 ls  s3://source
+  579  awslocal s3 ls  
+  580  awslocal lambda invoke --function-name CreateThumbnail --invocation-type Event --payload file://inputFile.txt outputfile.txt
+  581  awslocal s3 ls  s3://source-resized
+  582  awslocal iam list-roles
+  583  awslocal iam delete-role lambda-ex
+  584  awslocal iam delete-role --role-name lambda-ex
+  585  awslocal iam list-roles
+  586  ls
+  587  awslocal lambda invoke --function-name CreateThumbnail --invocation-type Event --payload file://inputFile.txt outputfile.txt
+  588  awslocal s3 ls  s3://source-resized
+  589  awslocal lambda invoke --function-name CreateThumbnail --invocation-type RequestResponse --payload file://inputFile.txt outputfile.txt
+  590  awslocal s3 ls  s3://source-resized
+  591  aws lambda get-function --function-name CreateThumbnail
+  592  awslocal lambda create-function --function-name CreateThumbnail --zip-file fileb://function.zip --handler index.handler --runtime nodejs12.x --timeout 10 --memory-size 1024 --role arn:aws:iam::000000000000:role/lambda-s3-role
+  593  aws lambda get-function --function-name CreateThumbnail
+  594  ls
+  595  awslocal lambda update-function-configuration --function-name CreateThumbnail --timeout 30
+  596  vim inputFile.txt 
+  597  awslocal lambda invoke --function-name CreateThumbnail --invocation-type RequestResponse --payload file://inputFile.txt outputfile.txt
+  598  awslocal s3 ls  s3://source-resized
+  599  ls
+  600  ls node_modules/
+  601  npm install --arch=x64 --platform=linux --target=12.13.0  sharp
+  602  ls
+  603  mkdir lambda-function
+  604  mv package.json lambda-function/
+  605  mv package-lock.json  lambda-function/
+  606  mv inputFile.txt lambda-function/
+  607  mv index.js lambda-function/
+  608  mv function.zip lambda-function/
+  609  ls
+  610  mv node_modules/ lambda-function/
+  611  ls
+  612  cd lambda-function/
+  613  ls
+  614  ls
+  615  mv inputFile.txt ../
+  616  rm -rf function.zip 
+  617  zip -r function.zip .
+  618  awslocal lambda create-function --function-name CreateThumbnail --zip-file fileb://function.zip --handler index.handler --runtime nodejs12.x --timeout 20 --memory-size 1024 --role arn:aws:iam::000000000000:role/lambda-s3-role
+  619  awslocal lambda delete-function --function-name CreateThumbnail 
+  620  awslocal lambda create-function --function-name CreateThumbnail --zip-file fileb://function.zip --handler index.handler --runtime nodejs12.x --timeout 20 --memory-size 1024 --role arn:aws:iam::000000000000:role/lambda-s3-role
+  621  vim ../outputfile.txt 
+  622  vim ../inputFile.txt 
+  623  awslocal s3 --help
+  624  awslocal s3 get-bucket-policy s3://source
+  625  awslocal s3api get-bucket-policy s3://source
+  626* awslocal s3api --get-bucket-policy s3://sourc
+  627  awslocal s3api --list-buckets
+  628  awslocal s3api --list-bucket
+  629  awslocal s3api --list-buckets
+  630  pip install awscli-local
+  631  pip install --upgrade awscli-local
+  632  awslocal s3api --list-buckets
+  633  aws --endpoint-url=http://localhost:4568 s3 ls
+  634  aws --endpoint-url=http://localhost:4566 s3 ls
+  635  aws --endpoint-url=http://localhost:4566 s3api --list-buckets
+  636  awslocal s3api list-buckets
+  637  vim ../inputFile.txt 
+  638  ls
+  639  awslocal s3api list-objects
+  640  ls
+  641  ls
+  642  cd ..
+  643  ls
+  644  mkdir pub-sub
+  645  cd pub-sub/
+  646  npm init -y
+  647  npm i aws-sdk
+  648  touch consumer.js publisher.js
+  649  ls
+  650  vim publisher.js 
+  651  vim consumer.js 
+  652  awslocal sqs create-queue --queue-name local-queue
+  653  awslocal sns create-topic --name local-topic
+  654  awslocal sns subscribe  --notification-endpoint http://localhost:4576/000000000000/local-queue --topic-arn arn:aws:sns:us-east-1:000000000000:local-topic protocol sqs
+  655  awslocal sns subscribe  --notification-endpoint http://localhost:4576/000000000000/local-queue --topic-arn arn:aws:sns:us-east-1:000000000000:local-topic --protocol sqs
+  656  ls
+  657  node consumer.js 
+  658  awslocal sns subscribe  --notification-endpoint http://localhost:4576/000000000000/local-queue --topic-arn arn:aws:sns:us-east-1:000000000000:local-topic --protocol sqs
+  659  node consumer.js 
+  660  awslocal sns subscribe  --notification-endpoint http://localhost:4576/000000000000/local-queue --topic-arn arn:aws:sns:us-east-1:000000000000:local-topic --protocol sqs --endpoint-url=http://localhost:4575
+  661  node consumer.js 
+  662  awslocal sqs create-queue --queue-name local-queue
+  663  vim consumer.js 
+  664  awslocal sns create-topic --name local-topic
+  665  vim publisher.js 
+  666  awslocal sns subscribe  --notification-endpoint http://localhost:4576/000000000000/local-queue --topic-arn arn:aws:sns:us-east-1:000000000000:local-topic --protocol sqs 
+  667  node consumer.js 
+  668  history  | tail 10
+  669  history  | tail 
+  670  history  | tail -n 100
+  671  history  | tail -n 100 > history
