@@ -1,0 +1,16 @@
+{
+  "name": "test-upload",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test-upload.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.731.0",
+    "dotenv": "^8.2.0"
+  }
+}
